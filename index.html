@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="jscolor.js"></script>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <h2>Meme Generator</h2>
+  <canvas id="memegenerator" style="border:1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
+    <div class="control-panel">
+      <nav>
+        <button onclick="activateImageFinder()">Image Finder</button>
+        <button onclick="activateStyleEditor()">Style Editor</button>
+      </nav>
+
+      <div class="image-finder">
+        <p>Image Search:</p>
+        <input class="imageSearchBox" type="textbox" onkeypress="getJSON(event)"/>
+        <input class="imageSearchSubmit" type="submit" />
+        <table class="galleryTable"></table>
+      </div>
+      <div class="style-menu">
+        <label>Top Text: </label>
+        <input class="topFontText" type="textbox" /></br>
+        <label>Bottom Text: </label>
+        <input class="bottomFontText" type="textbox" /></br>
+        <label>Font Color: </label>
+        <input id="fontMainColor" class="jscolor {onFineChange:'updateFontColor(this)'}" value="000000"></br>
+        <label>Font Outline Color: </label>
+        <input id="fontOutlineColor" class="jscolor {onFineChange:'updateFontOutlineColor(this)'}" value="000000"></br>
+        <label>Font Name: </label>
+        <select id="font-family">
+              <option value="Arial">Arial</option>
+              <option value="Verdana ">Verdana </option>
+              <option value="Impact ">Impact </option>
+              <option value="Comic Sans MS">Comic Sans MS</option>
+          </select>
+      </div>
+    </div>
+  <script src="canvas.js"></script>
+</body>
+</html>
